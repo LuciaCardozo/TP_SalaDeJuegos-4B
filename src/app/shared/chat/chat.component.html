@@ -1,0 +1,31 @@
+<div *ngIf="mostrarChat" class="card" style="width: 25vw; height: 60vh; position: fixed; bottom: 0; right: 0; margin: 10px;">
+    <div class="card-header d-flex justify-content-between">
+        <h4>Chat {{nombreJuego}}</h4><a class="btn btn-danger" (click)="mostrarChat=false">X</a>
+    </div>
+    <div class="overflow-auto">
+        <div class="card-body" *ngFor="let mensaje of lista">
+            <div class="card-text justify-content-end" style="display: grid;" *ngIf="mensaje.emisor == usuarioActual">
+                <p style="background-color: rgb(157, 255, 127); margin-bottom:0; border-radius: 5px; padding-left: 5px;"><em>{{mensaje.mensaje}}</em></p>
+                <span style="font-size: 10px;">{{mensaje.horario | date:'short'}}</span>
+            </div>
+            <div class="card-text justify-content-start" style="display: grid;" *ngIf="mensaje.emisor != usuarioActual">
+                <h6 style="text-transform: capitalize;">{{mensaje.emisor.split('@')[0]}}</h6>
+                <p style="background-color: rgb(157, 255, 127); margin-bottom:0; border-radius: 5px; padding-left: 5px;"><em>{{mensaje.mensaje}}</em></p>
+                <span style="font-size: 10px;">{{mensaje.horario | date:'short'}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+        <div class="input-group mb-3">
+            <input type="text" [(ngModel)]="mensaje" class="form-control" placeholder="message" >
+            <div class="input-group-append">
+                <a class="btn btn-primary" (click)="mensajeChat()">send</a>
+            </div>
+          </div>
+    </div>
+  </div>
+
+  <button class="btnChat btn btn-primary" *ngIf="!mostrarChat" (click)="mostrarChat=true">
+    <img src="https://img.utdstc.com/icon/d18/c3c/d18c3cfc4976d716bbb54e7f201d0d0dd32dec4d3b829736352415ea45697fd2:200" style="width: 50px; height: 50px;" alt="">
+  </button>
+  <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Message_%28Send%29.png" style="width: 30px; height: 30px;" alt=""> -->

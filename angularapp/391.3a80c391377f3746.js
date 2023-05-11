@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktp_sala_de_juegos_lcardozo=self.webpackChunktp_sala_de_juegos_lcardozo||[]).push([[391],{6391:(t,s,u)=>{u.r(s),u.d(s,{JuegosModule:()=>a});var _=u(9808),e=u(8754),l=u(5e3);let a=(()=>{class o{}return o.\u0275fac=function(n){return new(n||o)},o.\u0275mod=l.oAB({type:o}),o.\u0275inj=l.cJS({imports:[[_.ez,e.x]]}),o})()}}]);

@@ -1,0 +1,21 @@
+<div class="contenedor text-center">
+    <app-navbar
+    [icono]="'http://simpleicon.com/wp-content/uploads/rocket.svg'"
+    [titulo]="'Sala de juegos'"
+    [botones]="buttons"
+    [imagen]="'../../../assets/apagado.png'"
+    ></app-navbar> 
+    <!-- <div><button></button></div> -->
+    <app-title-decoration [title]="title"></app-title-decoration>
+    <div class="divContainerPokemon flexCenterCenter">
+        <div class="divContainer">
+            <div class="card flexCenterCenter" (click)="juegoSeleccionado(juego)" *ngFor="let juego of juegos">
+                <div>
+                    <h3>{{juego.nombre}}</h3>
+                    <img width="200px" [src]="juego.img" alt="img-juego"><br>
+                    <label>{{juego.descripcion}}</label><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

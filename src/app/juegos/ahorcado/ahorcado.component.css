@@ -1,0 +1,55 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+button{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.popup{
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background-color: rgba(112, 22, 22, 0.274);
+}
+
+.palabraAAdivinar{
+    font-size: 80px; 
+    font-weight: bolder;
+    letter-spacing: 10px; 
+}
+
+.btn-letra-acertada{
+    background-color: rgb(24, 179, 24);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-letra-no-acertada{
+    background-color: red;
+    cursor: not-allowed;
+    pointer-events: none;
+    
+}
+
+.btn-deshabilitar{
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-no-pulsado{
+    background-color: rgb(0, 174, 255);
+}
+
+.imgFallo{
+    border-radius: 50px;
+    width: 20%;
+    height: 20%;
+}
+.modal-header{
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+}

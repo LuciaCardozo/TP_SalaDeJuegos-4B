@@ -1,0 +1,45 @@
+<div class="contenedor">
+  <app-navbar
+  [icono]="'http://simpleicon.com/wp-content/uploads/rocket.svg'"
+  [titulo]="'Ahorcado'"
+  [botones]="buttons"
+  ></app-navbar>
+  <div class="container col-12 text-center">
+      <div class="popup" style="display: none; top:0; left:0;" id="popup">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">{{mensaje}}</h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+              </div>
+              <div class="modal-body">
+                <p style="font-weight: bolder; font-size: 15px;">Desea continuar?</p>
+              </div>
+              <div class="text-center">
+                  <button type="button" class="btn btn-success m-1" value="si" (click)="continuarJugando()">Si</button>
+                  <button type="button" class="btn btn-secondary m-1" value="no" [routerLink]="['/home']">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div>
+          <img class="imgFallo mt-2" src="../../../../assets/img/{{numFallos}}.png" alt="">
+      </div>
+      <div>
+          <span class="badge badge-danger m-1" *ngFor="let fallo of fallos">{{fallo}}</span>
+      </div>
+      <!-- <app-toast aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center"></app-toast> -->
+      <p class="palabraAAdivinar">{{palabraAdivinarPorAhora}}</p>
+      <div class="d-flex justify-content-center">
+          <div class="mt-2" style="max-width: 450px;">
+              <button class="btn btn-primary m-1" *ngFor="let boton of botones"
+              (click)="botonClicked(boton)"
+              [ngClass]="boton.estado">{{boton.letra}}</button>
+          </div>
+      </div>
+      <app-chat 
+      [nombreJuego]="'Ahorcado'"
+      [data]="'chatAhorcado'"
+      ></app-chat>
+  </div>
+</div>

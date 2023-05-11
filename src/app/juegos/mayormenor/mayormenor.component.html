@@ -1,0 +1,54 @@
+<div class="contenedor">
+    <app-navbar
+        [icono]="'http://simpleicon.com/wp-content/uploads/rocket.svg'"
+        [titulo]="'Mayor o menor'"
+        [botones]="buttons"
+    ></app-navbar>
+    <div class="container col-12 text-center">
+        <div class="popup" style="top:0; left:0;" *ngIf="continuarJuego">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Se termino el tiempo</h5>
+                  <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <h4>Puntos ganados: {{puntosJugador}}</h4>
+                <div class="modal-body">
+                  <p style="font-weight: bolder; font-size: 15px;">Desea continuar?</p>
+                </div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-success m-1" value="si" (click)="continuarJugando()">Si</button>
+                    <button type="button" class="btn btn-secondary m-1" value="no" [routerLink]="['/home']">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="container col-6" *ngIf="jugar">
+            <!-- <app-toast aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center"></app-toast> -->
+            <div class="card mt-5">
+                <h4>{{tiempoRestante}}</h4>
+                <div>
+                    <!-- <img src="../../../../assets/imgcartas/0.jpg" style="width: 15%; height: 15%;" alt=""> -->
+                    <img src="../../../../assets/imgcartas/{{numeroRandom}}.jpg" style="width: 20%; height: 20%;"alt="">
+                </div>
+                <div class="card-actions p-4">
+                    <h4>La proxima carta es Mayor o Menor que {{numeroRandom}} ?</h4>
+                    <button class="btn btn-primary m-1" (click)="seleccionar('menor')">Menor</button>
+                    <button class="btn btn-primary m-1" (click)="seleccionar('mayor')">Mayor</button>
+                </div>
+                <h3>Puntos: {{puntosJugador}}</h3>
+            </div>
+        </div>
+        <div class="container" *ngIf="!jugar">
+            <div class="d-flex justify-content-center align-items-end" style="width: 100%; height: 40%;">
+                <button class="btnEmpezarJuego btn btn-success" style="width: 200px; height: 200px; border-radius: 100px;" (click)="tiempoCorriendo()">
+                    Start
+                </button>
+            </div>
+        </div>
+        <app-chat 
+        [nombreJuego]="'MayorMenor'"
+        [data]="'chatMayorMenor'"
+        ></app-chat>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+.btnChat{
+    width: 5rem; 
+    height: 5rem; 
+    position: fixed; 
+    border-radius: 50px; 
+    bottom: 0; 
+    right: 0; 
+    margin: 15px;
+}
