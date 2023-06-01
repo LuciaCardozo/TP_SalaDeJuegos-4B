@@ -1,0 +1,16 @@
+.btn-letra-acertada{
+    background-color: rgb(24, 179, 24);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-letra-no-acertada{
+    background-color: red;
+    cursor: not-allowed;
+    pointer-events: none;
+    
+}
+
+.btn-no-pulsado{
+    background-color: rgb(0, 174, 255);
+}

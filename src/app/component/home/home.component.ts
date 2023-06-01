@@ -24,13 +24,25 @@ export class HomeComponent implements OnInit {
     nombre:"Ahorcado",
     route:"/juegos/ahorcado",
     descripcion:"",
-    img:"../../../assets/ahorcado.png"
+    img:"../../../assets/iconoAhorcado.png"
   }, {
     nombre:"Mayor o Menor",
     route:"/juegos/mayorOMenor",
     descripcion:"",
-    img:"../../../assets/MayorOMenor.webp"
-  }];
+    img:"../../../assets/iconoMayorOMenor.png"
+  }, {
+      nombre:"Adivina el numero",
+      route:"/juegos/adivinaElNumero",
+      descripcion:"",
+      img:"../../../assets/iconoAdivinaElNumero.png"
+    
+  }, {
+    nombre:"Preguntados",
+    route:"/juegos/preguntados",
+    descripcion:"",
+    img:"../../../assets/iconoPreguntados.png"
+  
+}];
 
   title:string = "";
   email: any;

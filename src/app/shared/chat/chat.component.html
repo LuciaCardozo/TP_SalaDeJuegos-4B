@@ -1,25 +1,25 @@
-<div *ngIf="mostrarChat" class="card" style="width: 25vw; height: 60vh; position: fixed; bottom: 0; right: 0; margin: 10px;">
+<div *ngIf="mostrarChat" class="card" style="width: 25vw; height: 60vh; position: fixed; bottom: 0; right: 0; margin: 10px; z-index: 9999;">
     <div class="card-header d-flex justify-content-between">
         <h4>Chat {{nombreJuego}}</h4><a class="btn btn-danger" (click)="mostrarChat=false">X</a>
     </div>
-    <div class="overflow-auto">
+    <div class="overflow-auto" style="height: 80vh; width: 100%; overflow: auto;" #scrollMe [scrollTop]="scrollMe.scrollHeight">
         <div class="card-body" *ngFor="let mensaje of lista">
             <div class="card-text justify-content-end" style="display: grid;" *ngIf="mensaje.emisor == usuarioActual">
                 <p style="background-color: rgb(157, 255, 127); margin-bottom:0; border-radius: 5px; padding-left: 5px;"><em>{{mensaje.mensaje}}</em></p>
-                <span style="font-size: 10px;">{{mensaje.horario | date:'short'}}</span>
+                <span style="font-size: 10px; text-align: start; margin-left: 0.2rem; margin-top: 5px;">{{mensaje.horario | date:'short'}}</span>
             </div>
             <div class="card-text justify-content-start" style="display: grid;" *ngIf="mensaje.emisor != usuarioActual">
-                <h6 style="text-transform: capitalize;">{{mensaje.emisor.split('@')[0]}}</h6>
+                <h6 style="text-transform: capitalize; text-align: start; margin-left: 0.2rem;">{{mensaje.emisor.split('@')[0]}}</h6>
                 <p style="background-color: rgb(157, 255, 127); margin-bottom:0; border-radius: 5px; padding-left: 5px;"><em>{{mensaje.mensaje}}</em></p>
-                <span style="font-size: 10px;">{{mensaje.horario | date:'short'}}</span>
+                <span style="font-size: 10px; text-align: start; margin-left: 0.2rem; margin-top: 5px;">{{mensaje.horario | date:'short'}}</span>
             </div>
         </div>
     </div>
     <div class="card-footer text-muted">
         <div class="input-group mb-3">
-            <input type="text" [(ngModel)]="mensaje" class="form-control" placeholder="message" >
-            <div class="input-group-append">
-                <a class="btn btn-primary" (click)="mensajeChat()">send</a>
+            <input type="text" [(ngModel)]="mensaje" class="form-control" placeholder="mensaje" >
+            <div class="input-group-append" style="display: flex;">
+                <a class="btn btn-primary" (click)="mensajeChat()">Enviar</a>
             </div>
           </div>
     </div>

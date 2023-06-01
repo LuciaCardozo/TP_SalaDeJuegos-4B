@@ -19,6 +19,8 @@ import { JuegosRoutingModule } from './juegos/juegos-routing.module';
 import { AhorcadoComponent } from './juegos/ahorcado/ahorcado.component';
 import { MayormenorComponent } from './juegos/mayormenor/mayormenor.component';
 import { ChatComponent } from './shared/chat/chat.component';
+import { PreguntadosComponent } from './juegos/preguntados/preguntados.component';
+import { AdivinaelnumeroComponent } from './juegos/adivinaelnumero/adivinaelnumero.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDFS-2rJTcwby8d9K0PY6cw82haLpsfKOQ",
@@ -41,7 +43,9 @@ const firebaseConfig = {
     RegisterComponent,
     AhorcadoComponent,
     MayormenorComponent,
-    ChatComponent
+    ChatComponent,
+    PreguntadosComponent,
+    AdivinaelnumeroComponent
   ],
   imports: [
     CommonModule,

@@ -1,13 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { DataBaseService } from 'src/app/services/dataBase/data-base.service';
-
+import { ScrollToBottomDirective } from 'src/app/scroll-to-bottom.directive';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  styleUrls: ['./chat.component.css'],
+  styles: [
+    `
+    :host {
+      font-size: 2em;
+    }
+
+    .my-list {
+      overflow: auto;
+    }
+    `,
+  ],
 })
 export class ChatComponent implements OnInit {
 
+  @ViewChild(ScrollToBottomDirective)
+  scroll?: ScrollToBottomDirective;
   mostrarChat=false;
   @Input() nombreJuego:any;
   lista:any = [];

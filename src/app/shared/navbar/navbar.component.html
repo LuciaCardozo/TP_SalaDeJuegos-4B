@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg">
     <!-- <img class="imgIconHeader" [src]="icono" alt="icono"> -->
-    <a class="navbar-brand" style="color: white; font-family: monospace;">{{titulo}}</a>
+    <a class="navbar-brand" style="color: white; font-family: monospace; margin-left: 10px;">{{titulo}}</a>
     <div class=" navbar-collapse d-flex justify-content-end">
         <ul class="navbar-nav ml-auto m-2 flexCenterCenter">
             <li *ngFor="let boton of botones" [ngStyle]="{'background-color':boton.color}" class="nav-item m-1 nav-link btn text-white" type="button"
-                routerLink={{boton.ruta}}>{{boton.texto}}
-                <img *ngIf="!boton.texto" [src]="imagen" alt="" width="35px" height="35px">
+                routerLink={{boton.ruta}} style="font-size: 16px !important; padding: 5px 4px !important">{{boton.texto}}
+                <img *ngIf="!boton.texto" [src]="imagen" alt="" width="20px" height="20px">
             </li>            
         </ul>
     </div>

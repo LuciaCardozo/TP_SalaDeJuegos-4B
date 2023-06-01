@@ -1,0 +1,46 @@
+<div class="contenedor col-12 text-center">
+    <app-navbar
+        [icono]="'http://simpleicon.com/wp-content/uploads/rocket.svg'"
+        [titulo]="'Adivina el Numero'"
+        [botones]="buttons"
+    ></app-navbar>
+    <button class="btn btn-info" style="margin-top: 10%; font-size: 30px; width: 200px; height: 200px; border-radius: 100px;"
+     *ngIf="comenzar" (click)="mezcladorNumerosRandom()">Comenzar</button>
+    <div class="popup" style="top:0; left:0;" *ngIf="continuarJuego">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Te quedaste sin vidas</h5>
+            </div>
+            <h4>Puntos ganados: {{puntos}}</h4>
+            <div class="modal-body">
+              <p style="font-weight: bolder; font-size: 15px;">Desea continuar?</p>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-success m-1" value="si" (click)="continuarConElJuego()">Si</button>
+                <button type="button" class="btn btn-secondary m-1" value="no" [routerLink]="['/home']">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!comenzar">
+
+          <div class="vidaPuntos">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16" fill="red">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg>
+              <label>{{vida}}</label>
+          </div>
+          <div class="d-flex justify-content-center">
+              <div class="m-1 mt-5" >
+                  <button *ngFor="let boton of botonesNumeros" 
+                  class="btn btn-primary" 
+                  style="font-size: 25px; font-weight: bolder; margin: 5px;"
+                  (click)="numeroClickeado(boton)"
+                  [ngClass]="boton.estado"
+                  >{{boton.numero}}</button>
+              </div>
+          </div>
+          <h1>Puntos: {{puntos}}</h1>
+      </div>
+</div>
