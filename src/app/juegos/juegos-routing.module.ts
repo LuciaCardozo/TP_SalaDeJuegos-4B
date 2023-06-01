@@ -8,8 +8,8 @@ import { PreguntadosComponent } from './preguntados/preguntados.component';
 
 const routes: Routes = [{path:"ahorcado",component:AhorcadoComponent,canActivate:[AuthGuard]},
 {path:"mayorOMenor",component:MayormenorComponent,canActivate:[AuthGuard]},
-{path:"adivinaElNumero",component:AdivinaelnumeroComponent},
-{path:"preguntados",component:PreguntadosComponent}];
+{path:"adivinaElNumero",component:AdivinaelnumeroComponent,canActivate:[AuthGuard]},
+{path:"preguntados",component:PreguntadosComponent,canActivate:[AuthGuard]}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
