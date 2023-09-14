@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           setTimeout(() => {        
             this.router.navigate(['/home']);
           }, 200);
-          this.toastService.show("Successfully user", {classname:'bg-success', "delay":"2000"});
+          this.toastService.show("Bienvenido", {classname:'bg-success', "delay":"2000"});
         });
       }catch(error){
         this.toastService.show("Error login", {classname:'bg-warning', "delay":"2000"});
