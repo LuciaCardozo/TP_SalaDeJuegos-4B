@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
   @Input() titulo:any;
   @Input() imagen:any;
   @Input() botones:any = [];
+  @Input() showBack: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
